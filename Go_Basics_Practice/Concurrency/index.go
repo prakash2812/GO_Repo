@@ -153,7 +153,12 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"sync"
 )
+
+var wg sync.WaitGroup
+var mut sync.Mutex
+var storage []string
 
 func main() {
 
@@ -164,17 +169,23 @@ func main() {
 	}
 
 	for _, val := range websites {
-		getStatusCode(val)
+		wg.Add(1)
+		go getStatusCode(val)
 	}
-
+	wg.Wait()
+	fmt.Println(storage)
 }
 
 func getStatusCode(url string) {
+	defer wg.Done()
 	res, err := http.Get(url)
 	if err != nil {
 		fmt.Println("opps something went wrong", err)
 	} else {
-		fmt.Printf("%d status code %s", res.StatusCode, url)
+		mut.Lock()
+		storage = append(storage, url)
+		mut.Unlock()
+		fmt.Printf("%d status code %s\n", res.StatusCode, url)
 	}
 
 }
