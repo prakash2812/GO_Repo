@@ -189,3 +189,7 @@ func getStatusCode(url string) {
 	}
 
 }
+
+
+// Racing condition
+

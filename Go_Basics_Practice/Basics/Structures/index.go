@@ -94,3 +94,68 @@ func main() {
 }
 
 
+// ------------ with array of struct ype
+//struct is collection of fields {a;b}
+//array/slice is storage of same fields but size will be fixed/dynamic
+
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	storage := []struct {
+		name   string
+		salary float64
+	}{{"arjun", 28}, {"prakash", 23}}
+
+
+	for _, item := range storage {
+		fmt.Printf("%T", item)
+		updateEmployeeSalary(&item, 23)
+	}
+
+	fmt.Printf("update dat is ", storage)
+
+}
+
+func updateEmployeeSalary(data *struct {
+	name   string
+	salary float64
+}, days uint64) {
+	data.salary = float64(days) * 2000
+}
+
+// -------- same above can be done using struct so we don't need to mention long type for parameters 
+
+package main
+
+import (
+	"fmt"
+)
+
+type EmpTemplate struct {
+	name   string
+	salary float64
+}
+
+func main() {
+	/* var play []struct{a,b int}
+	var play1 []EmpTemplate
+	play = append(play, struct{a int; b int}{2,3})
+	play1 = append(play1, EmpTemplate{"arjun",23}) */
+
+	storage := []EmpTemplate{{"arjun", 28}, {"prakash", 23}}
+
+	for _, item := range storage {
+		updateEmployeeSalary(&item, 23)
+	}
+
+	fmt.Printf("update dat is ", storage)
+
+}
+
+func updateEmployeeSalary(data *EmpTemplate, days uint64) {
+	data.salary = float64(days) * 2000
+}
