@@ -1,3 +1,15 @@
+# naming things
+
+<!-- walrus operator -->
+
+input := 10
+
+<!-- comma ok // err err -->
+
+input, ok = []int
+
+<!-- Capital letter func name or variable are implictly public -->
+
 # GO Commands
 
 ## To install pkg: go.sum will create
@@ -49,3 +61,13 @@ go list -m all
 <!-- list of all version of mux dependency  -->
 
 go list -m -versions github.com/gorilla/mux
+
+## Go help
+
+<!-- to check all commnds -->
+
+go help
+
+<!-- to check the path of our code -->
+
+go env GOPATH
