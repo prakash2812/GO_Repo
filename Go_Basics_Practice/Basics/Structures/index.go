@@ -32,7 +32,7 @@ type Vertex struct {
 }
 
 func main() {
-	id := []Vertex{1, 2}
+	id := []Vertex{Vertex{1, 2}, Vertex{2, 3}}
 	v := Vertex{1, 2}
 	v.X = 4
 	fmt.Println(v.X)
