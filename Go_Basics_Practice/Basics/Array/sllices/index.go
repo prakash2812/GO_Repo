@@ -229,11 +229,18 @@ func main() {
 
 	data := []string{"sir", "AI", "prakash", "arjun", "david"}
 	
+	// sorting the data of int and strings from asscending to desending order
 	sort.Strings(data)
 	fmt.Println(data) //[AI arjun david prakash sir]
 	data2 := []int{23,45,6,12,34,576,234,6878,456,12,1}
 	sort.Ints(data2)
 	fmt.Println(data2)//[1 6 12 12 23 34 45 234 456 576 6878]
+
+	// delete the array using range concept a[low:high]
+	courses:= []string{"react","js","go","php","AI","dataScience"}
+	index :=3
+	courses = append(courses[:index],courses[index+1:]...)
+	fmt.Println(courses)
 
 }
 
