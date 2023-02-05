@@ -42,6 +42,12 @@ go mod init guthub.com/authorname/modulename
 
 ## Run and build:
 
+<!-- we can build respective to os machines it creates .exe files-->
+
+GOOS="windows" go build
+
+GOOS="linux" go build
+
 go build .
 
 <!-- this looks pkgs directly from web or cache -->
