@@ -182,3 +182,20 @@ func main() {
 		fmt.Println(f(i))
 	}
 }
+// ---------------- pro adder : give any number of values-----------------
+
+package main
+
+func main() {
+	result := adder(2, 3, 4, 5)
+
+	fmt.Println("Total sum of addition is ", result)
+}
+
+func adder(values ...int) int {
+	total := 0
+	for _, sum := range values {
+		total += sum
+	}
+	return total
+}
