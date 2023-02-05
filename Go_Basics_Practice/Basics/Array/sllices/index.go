@@ -164,7 +164,7 @@ func main() {
 		fmt.Printf("%s\n", strings.Join(board[i], " "))
 	}
 }
-
+/*-------------------------------append works on nil slices  -------------     */
 /* Appending to a slice
 It is common to append new elements to a slice, and so Go provides a built-in append function. The documentation of the built-in package describes append.
 
