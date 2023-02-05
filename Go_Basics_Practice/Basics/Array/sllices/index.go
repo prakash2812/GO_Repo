@@ -202,6 +202,41 @@ func printSlice(s []int) {
 	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
 }
 
+// --------------------------------------------------------
+
+package main
+
+import (
+	"fmt"
+	"sort"
+)
+
+func main() {
+	data := []string{"hero"} // [hero]
+	data[0] = "chang"
+	fmt.Println(data) //[chang]
+
+	data1 := append(data, "prakash")//[chang,prakash]
+	data1[1] = "change"
+	fmt.Println(data1) //[chang change]
+
+	scroes := make([]int, 5) // [0,0,0,0,0]
+
+	big := append(scroes[:4]) // [0,0,0,0]
+	big[2] = 10
+
+	fmt.Println(scroes, big) //[0 0 10 0 0] [0 0 10 0]
+
+	data := []string{"sir", "AI", "prakash", "arjun", "david"}
+	
+	sort.Strings(data)
+	fmt.Println(data) //[AI arjun david prakash sir]
+	data2 := []int{23,45,6,12,34,576,234,6878,456,12,1}
+	sort.Ints(data2)
+	fmt.Println(data2)//[1 6 12 12 23 34 45 234 456 576 6878]
+
+}
+
 
 // ---------------------
 package main
@@ -256,4 +291,16 @@ func main(){
 	for index,val:= range slice2 {
 		fmt.Println(index,val)
 	}
+}
+
+// ---------------------------------------------------------------------------
+
+package main
+
+import ("fmt")
+
+func main() {
+	data := []int{2,3,4}
+	data = append(data[:len(data)])
+	fmt.Println(data)
 }
