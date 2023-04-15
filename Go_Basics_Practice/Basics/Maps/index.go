@@ -4,11 +4,7 @@ The zero value of a map is nil. A nil map has no keys, nor can keys be added.
 
 The make function returns a map of the given type, initialized and ready for use.
 
- */
-
- package main
-
-import "fmt"
+*/
 
 type Vertex struct {
 	Lat, Long float64
@@ -24,14 +20,8 @@ func main() {
 	fmt.Println(m["Bell Labs"])
 }
 
-
 /* Map literals
 Map literals are like struct literals, but the keys are required. */
-
-
-package main
-
-import "fmt"
 
 type Vertex struct {
 	Lat, Long float64
@@ -52,10 +42,6 @@ func main() {
 
 /* If the top-level type is just a type name, you can omit it from the elements of the literal. */
 
-package main
-
-import "fmt"
-
 type Vertex struct {
 	Lat, Long float64
 }
@@ -68,7 +54,6 @@ var m = map[string]Vertex{
 func main() {
 	fmt.Println(m)
 }
-
 
 /* Mutating Maps
 Insert or update an element in map m:
@@ -90,11 +75,6 @@ If key is not in the map, then elem is the zero value for the map's element type
 Note: If elem or ok have not yet been declared you could use a short declaration form:
 
 elem, ok := m[key] */
-
-
-package main
-
-import "fmt"
 
 func main() {
 	m := make(map[string]int)
