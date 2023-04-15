@@ -40,7 +40,6 @@ func main() {
 	fmt.Println(a, b)
 	fmt.Println(names)
 }
-;m
 
 /* ====================================Slice literals================================*/
 /* A slice literal is like an array literal without the length.
